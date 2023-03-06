@@ -1,0 +1,103 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@font-face {
+  font-family: 'WorkSans-Bold';
+  src:  url('WorkSans-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'WorkSans-Medium';
+  src:  url('WorkSans-Medium.woff') format('woff');
+}
+
+
+body {
+  background-color: #050506;
+  /* background: radial-gradient(farthest-corner at 40px 40px, #361AC5 -180%, #050506); */
+  color: #FFFFFF;
+}
+
+.container {
+  margin: 4vh 4vw;
+  width: 92vw;
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 116px;
+}
+
+.logo {
+  background-image: url('logo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 5vh;
+  width: 7vw;
+}
+
+.h1 {
+  font-family: 'WorkSans-Bold', sans-serif;
+  font-size: 128px;
+  color: #1B18BE;
+}
+
+.cover {
+  margin-bottom: 188px;
+}
+
+.cover .h1 {
+  line-height: 90%
+}
+
+.cover :nth-of-type(2) {
+  text-align: center;
+}
+
+.cover :nth-of-type(3) {
+  text-align: right;
+  margin-bottom: 64px;
+}
+
+.cover .text {
+  width: 29.4vw;
+  opacity: 0.7;
+  float: right;
+}
+
+.h2 {
+  font-family: 'WorkSans-Medium', sans-serif;
+  font-size: 64px;
+  margin-bottom: 32px;
+}
+
+.h3 {
+  font-family: 'WorkSans-Medium', sans-serif;
+  font-size: 48px;
+}
+
+.text {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+/* Стили колоды */
+.decks {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 108px;
+}
+
+.deck {
+  padding: 24px;
+  background: radial-gradient(at bottom left, #1B1BBE, #050506);
+  width: 27vw;
+  height: 280px;
+  border-radius: 16px;
+
+  justify-content: end;
+  display: flex;
+  flex-direction: column;
+}

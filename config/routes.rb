@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :decks do
-      resources :rooms
-  end
+  root 'promo#index'
 
-  root 'decks#index'
+  get "/promo", to: "promo#index"
+
+  resources :rooms do
+    resources :players
+  end
 
 end

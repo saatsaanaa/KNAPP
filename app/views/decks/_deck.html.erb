@@ -5,4 +5,7 @@
   <p class="text">
     <%= deck.description %>
   </p>
+  <div class="a_button">
+    <%= link_to 'начать игру', {:action => 'new', :controller => 'rooms', :id => deck.id} %>
+  </div>
 </div>

@@ -1,0 +1,30 @@
+<div class="room">
+
+  <div class="room_information">
+    <div class="information">
+      <p class="h3">Все игроки:</p>
+      <% @room.players.each do |player| %>
+      <div class="player">
+        <p class="text"><%= player.name %></p>
+      </div>
+      <% end %>
+      <div class="a_button">
+        Пригласить
+      </div>
+    </div>
+
+    <div class="about_player">
+      <p class="h3">Настя</p>
+      <div class="player">
+        <p class="text"> Правд выбрано:</p>
+        <p class="text"> Действий выбрано:</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="playground">
+  <p><%= @deck.title %></p>
+
+  </div>
+</div>

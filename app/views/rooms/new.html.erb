@@ -1,0 +1,11 @@
+<h1>Создаем игру</h1>
+
+<h2>Придумайте псевдоним</h2>
+
+<%= form_with model: [ @room, @room.players.build ] do |f| %>
+
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+
+  <%= f.submit "начать игру"%>
+<% end %>

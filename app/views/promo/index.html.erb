@@ -1,2 +1,22 @@
-<h1>Promo#index</h1>
-<p>Find me in app/views/promo/index.html.erb</p>
+<div class="cover">
+  <p class="h1">Станьте ближе </p>
+  <p class="h1">несмотря</p>
+  <p class="h1">на расстояние</p>
+  <p class="text">Играйте вместе в&nbsp;&laquo;Правда или действие&raquo; даже если вы&nbsp;далеко друг от&nbsp;друга.</p>
+</div>
+
+<p class="h2">Популярные</p>
+
+<div class="decks" id="decks">
+  <% @decks.limit(3).each do |deck| %>
+  <%= render(deck) %>
+  <% end %>
+</div>
+
+<p class="h2">На любой случай</p>
+
+<div class="decks" id="decks">
+  <% @decks.last(3).each do |deck| %>
+  <%= render(deck) %>
+  <% end %>
+</div>

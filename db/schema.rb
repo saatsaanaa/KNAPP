@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_051722) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_02_233418) do
   create_table "cards", force: :cascade do |t|
     t.string "category"
     t.text "body"
@@ -31,15 +31,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_051722) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "room_id", null: false
+    t.index ["room_id"], name: "index_players_on_room_id"
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.integer "max_player"
-    t.string "current_player"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "deck_id"
+    t.integer "owner_id"
   end
 
   add_foreign_key "cards", "decks"
+  add_foreign_key "players", "rooms"
 end

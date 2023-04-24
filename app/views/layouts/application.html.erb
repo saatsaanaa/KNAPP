@@ -13,14 +13,28 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="logo">
+        <div class="a_logo"></div>
 
+        <div class="navbar a_text">
+          <p class="link">
+            <%= link_to 'колоды', {:action => 'index', :controller => 'decks'} %>
+          </p>
+          <p class="link">
+            <%= link_to 'правила', {:action => 'new', :controller => 'rooms'} %>
+          </p>
+          <p class="link">
+            <%= link_to 'о проекте', {:action => 'new', :controller => 'rooms'} %>
+          </p>
         </div>
-      </div>
 
-      <%= yield %>
+        <div class="a_button-inline">
+            <%= link_to 'начать игру', {:action => 'new', :controller => 'rooms'} %>
+        </div>
+        </div>
 
-      <p class="text" style="text-align: center"> KNAPP @2022-2023</p>
+        <%= yield %>
+
+        <p class="text" style="text-align: center"> KNAPP @2022-2023</p>
     </div>
 
   </body>

@@ -1,22 +1,96 @@
-<div class="cover">
-  <p class="h1">Станьте ближе </p>
-  <p class="h1">несмотря</p>
-  <p class="h1">на расстояние</p>
-  <p class="text">Играйте вместе в&nbsp;&laquo;Правда или действие&raquo; даже если вы&nbsp;далеко друг от&nbsp;друга.</p>
+<p class="a_header-1">Колоды</p>
+
+<div class="block">
+  <p class="a_header-2">Общение</p>
+
+  <div class="decks" id="decks">
+    <% @decks.limit(3).each do |deck| %>
+    <div class="deck deck-<%= deck.id %>" id="<%= dom_id deck %>">
+
+      <div class="deck-information">
+        <p class="a_header-card">
+          <%= deck.title %>
+        </p>
+        <p class="a_header-description">
+          <%= deck.description %>
+        </p>
+      </div>
+
+      <div class="deck-manipulation">
+        <div class="category">
+          <p>общение</p>
+        </div>
+
+        <div class="a_button-solid">
+          <%= link_to 'начать игру', {:action => 'new', :controller => 'rooms', :id => deck.id} %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
 
-<p class="h2">Популярные</p>
+<div class="block">
+  <p class="a_header-2">Особые</p>
 
-<div class="decks" id="decks">
-  <% @decks.limit(3).each do |deck| %>
-  <%= render(deck) %>
-  <% end %>
+  <div class="decks" id="decks">
+    <% @decks.offset([(@decks.count-2)/2, 0].max).limit(3).each do |deck| %>
+    <div class="deck deck-<%= deck.id %>" id="<%= dom_id deck %>">
+
+      <div class="deck-information">
+        <p class="a_header-card">
+          <%= deck.title %>
+        </p>
+        <p class="a_header-description">
+          <%= deck.description %>
+        </p>
+      </div>
+
+      <div class="deck-manipulation">
+        <div class="category">
+          <p>особые</p>
+        </div>
+
+        <div class="a_button-solid">
+          <%= link_to 'начать игру', {:action => 'new', :controller => 'rooms', :id => deck.id} %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
 
-<p class="h2">На любой случай</p>
+<div class="block">
+  <p class="a_header-2">Фильмы</p>
 
-<div class="decks" id="decks">
-  <% @decks.last(3).each do |deck| %>
-  <%= render(deck) %>
-  <% end %>
+  <div class="decks" id="decks">
+    <% @decks.last(2).each do |deck| %>
+    <div class="deck deck-<%= deck.id %>" id="<%= dom_id deck %>">
+
+      <div class="deck-information">
+        <p class="a_header-card">
+          <%= deck.title %>
+        </p>
+        <p class="a_header-description">
+          <%= deck.description %>
+        </p>
+      </div>
+
+      <div class="deck-manipulation">
+        <div class="category">
+          <p>фильмы</p>
+        </div>
+
+        <div class="a_button-solid">
+          <%= link_to 'начать игру', {:action => 'new', :controller => 'rooms', :id => deck.id} %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <div class="deck">
+
+    </div>
+  </div>
+</div>
+
 </div>

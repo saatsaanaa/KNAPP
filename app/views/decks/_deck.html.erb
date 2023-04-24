@@ -1,11 +1,21 @@
-<div class="deck"  id="<%= dom_id deck %>">
-  <p class="h3">
-    <%= deck.title %>
-  </p>
-  <p class="text">
-    <%= deck.description %>
-  </p>
-  <div class="a_button">
-    <%= link_to 'начать игру', {:action => 'new', :controller => 'rooms', :id => deck.id} %>
+<div class="deck deck-<%= deck.id %>" id="<%= dom_id deck %>">
+
+  <div class="deck-information">
+    <p class="a_header-card">
+      <%= deck.title %>
+    </p>
+    <p class="a_header-description">
+      <%= deck.description %>
+    </p>
+  </div>
+
+  <div class="deck-manipulation">
+    <div class="category">
+      <p>общение</p>
+    </div>
+
+    <div class="a_button-solid">
+      <%= link_to 'начать игру', {:action => 'new', :controller => 'rooms', :id => deck.id} %>
+    </div>
   </div>
 </div>

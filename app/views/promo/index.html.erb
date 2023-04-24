@@ -1,22 +1,79 @@
 <div class="cover">
-  <p class="h1">Станьте ближе </p>
-  <p class="h1">несмотря</p>
-  <p class="h1">на расстояние</p>
-  <p class="text">Играйте вместе в&nbsp;&laquo;Правда или действие&raquo; даже если вы&nbsp;далеко друг от&nbsp;друга.</p>
+
+  <div class="f-col">
+    <p class="a_header-1">Станьте ближе <br> несмотря на расстояние</p>
+    <div></div>
+  </div>
+
+  <div class="s-col">
+    <div></div>
+    <p class="a_text">В&nbsp;KNAPP мы&nbsp;собрали все самые интересные вопросы и&nbsp;задания для игры в&nbsp;&laquo;Правда или действие&raquo; на&nbsp;расстоянии</p>
+  </div>
+
 </div>
 
-<p class="h2">Популярные</p>
-
-<div class="decks" id="decks">
-  <% @decks.limit(3).each do |deck| %>
-  <%= render(deck) %>
-  <% end %>
+<div class="block">
+  <p class="a_header-2">Как играть?</p>
+  <p class="a_header-1">Выберите колоду под ваши интересы, приглашайте друзей и&nbsp;начинайте игру</p>
 </div>
 
-<p class="h2">На любой случай</p>
+<div class="block">
+  <p class="a_header-2">Популярные колоды</p>
 
-<div class="decks" id="decks">
-  <% @decks.last(3).each do |deck| %>
-  <%= render(deck) %>
-  <% end %>
+  <div class="decks" id="decks">
+    <% @decks.limit(3).each do |deck| %>
+    <%= render(deck) %>
+    <% end %>
+  </div>
+</div>
+
+<div class="block">
+  <p class="a_header-2">Категории</p>
+  <div class="categories">
+    <div class="category-1">
+      <div class="deck-information">
+        <p class="a_header-card">
+          Общение
+        </p>
+        <p class="a_header-description">
+          Вопросы и задания, которые помогут познакомиться <br>и найти темы для разговора
+        </p>
+      </div>
+
+        <div class="a_button-inline category-button">
+          <%= link_to 'подробнее', {:action => 'index', :controller => 'decks'} %>
+        </div>
+    </div>
+
+    <div class="category-2">
+      <div class="deck-information">
+        <p class="a_header-card">
+          Особые
+        </p>
+        <p class="a_header-description">
+          Когда вы очень близки и можете позволить себе все что угодно
+        </p>
+      </div>
+
+        <div class="a_button-inline category-button">
+          <%= link_to 'подробнее', {:action => 'index', :controller => 'decks'} %>
+        </div>
+      </div>
+
+    <div class="category-3">
+      <div class="deck-information">
+        <p class="a_header-card">
+          Фильмы
+        </p>
+        <p class="a_header-description">
+          Обсудить любимую киновселенную, представить себя главным героем и весело провести время
+        </p>
+      </div>
+
+        <div class="a_button-inline category-button">
+          <%= link_to 'подробнее', {:action => 'index', :controller => 'decks'} %>
+        </div>
+    </div>
+  </div>
+
 </div>
